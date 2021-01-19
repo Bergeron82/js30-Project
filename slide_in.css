@@ -1,0 +1,116 @@
+/* Cassie Williams 09/21/2020
+  Adapted from https://javascript30.com/
+  New selectors/properties/declarations: Have not used much in the way of a class.class such as align-right.slide-in */
+
+
+html {
+  box-sizing: border-box;
+  background: #ffffff; /* changed color */
+  font-family: 'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* added selector */
+#image {
+    background-image: url("cover.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+    max-width: 950px;
+    margin: 0 auto;
+    filter: grayscale(100%) contrast(130%);
+}
+
+/* added selector */
+#image:hover {
+    filter: grayscale(0%);
+    transition: ease-in-out .5s;
+    cursor: pointer;
+}
+
+h1 {
+  margin-top: 1em; /* changed and added declarations */
+  font-size: 5em;
+  text-align: center;
+  color: lightgray;
+}
+
+/* added selector */
+h1:hover {
+    color: rgb(255, 178, 169);
+    transition: ease-in-out .5s;
+    cursor: pointer;
+}
+
+/* added selector */
+img {
+    filter: grayscale(100%);
+    padding: 10px;
+}
+
+#site-wrap {
+  max-width: 950px; /* changed */
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  text-align: justify;
+}
+
+.align-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.align-right {
+  float: right;
+  margin-left: 20px;
+}
+
+.slide-in {
+  opacity: 0;
+  transition: all ease-in-out .5s;
+}
+/* added selector */
+.text-slide-in {
+    opacity: 0;
+    transition: all ease-in-out .7s;
+}
+
+.align-left.slide-in {
+  transform: translateX(-70%) scale(0.90); 
+  /* changed all transforms to slide in from farther away */
+}
+
+.align-right.slide-in {
+    transform: translateX(70%) scale(0.90);
+}
+
+/* added selectors */
+.align-text-left.text-slide-in {
+    transform: translateX(-50%);
+}
+/* added selectors */
+.align-text-right.text-slide-in {
+    transform: translateX(50%);
+}
+
+.slide-in.active, /* added */ .text-slide-in.text-active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+  transition: ease-in .7s;
+}
+
+/* added selector */
+.slide-in.active {
+    filter: grayscale(10%);
+    transition: ease-in .5s;
+}
